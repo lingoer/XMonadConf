@@ -1,0 +1,58 @@
+name:                MyDesktop
+version:             0.1.0.0
+github:              "lingoer/XMonadConf"
+license:             BSD3
+author:              "Roy Fu"
+maintainer:          "lingoerer@gmail.com"
+copyright:           "2023 Roy here"
+
+extra-source-files:
+- README.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/lingoer/XMonadConf#readme>
+
+dependencies:
+  - base >= 4.7 && < 5
+  - xmonad
+  - xmonad-contrib
+  - containers
+  - xmobar >= 0.47
+
+ghc-options:
+- -Wall
+- -Wcompat
+- -Widentities
+- -Wincomplete-record-updates
+- -Wincomplete-uni-patterns
+- -Wmissing-export-lists
+- -Wmissing-home-modules
+- -Wpartial-fields
+- -Wredundant-constraints
+
+library:
+  source-dirs: src
+
+executables:
+  xmonad:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - MyDesktop
+
+tests:
+  md-test:
+    main:                Spec.hs
+    source-dirs:         test
+    dependencies:
+    - MyDesktop
