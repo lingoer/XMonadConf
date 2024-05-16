@@ -24,6 +24,10 @@ dependencies:
   - xmonad-contrib
   - containers
   - xmobar >= 0.47
+  - X11
+  - X11-xft
+  - text
+  - aeson
 
 ghc-options:
 - -Wall

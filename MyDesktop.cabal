@@ -24,6 +24,7 @@ source-repository head
 
 library
   exposed-modules:
+      Bar
       Keymaps
       Startup
       Themes
@@ -34,8 +35,12 @@ library
       src
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
   build-depends:
-      base >=4.7 && <5
+      X11
+    , X11-xft
+    , aeson
+    , base >=4.7 && <5
     , containers
+    , text
     , xmobar >=0.47
     , xmonad
     , xmonad-contrib
@@ -50,8 +55,12 @@ executable xmonad
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N2
   build-depends:
       MyDesktop
+    , X11
+    , X11-xft
+    , aeson
     , base >=4.7 && <5
     , containers
+    , text
     , xmobar >=0.47
     , xmonad
     , xmonad-contrib
@@ -67,8 +76,12 @@ test-suite md-test
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
   build-depends:
       MyDesktop
+    , X11
+    , X11-xft
+    , aeson
     , base >=4.7 && <5
     , containers
+    , text
     , xmobar >=0.47
     , xmonad
     , xmonad-contrib
