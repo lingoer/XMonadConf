@@ -1,14 +1,14 @@
-module Themes (
-  font,
-  backgroundColor,
-  backgroundAltColor,
-  foregroundColor,
-  primaryColor,
-  secondaryColor,
-  alertColor,
-  disabledColor,
-) where
-
+module Themes
+  ( font,
+    backgroundColor,
+    backgroundAltColor,
+    foregroundColor,
+    primaryColor,
+    secondaryColor,
+    alertColor,
+    disabledColor,
+  )
+where
 
 font :: String
 font = "Sans 14"

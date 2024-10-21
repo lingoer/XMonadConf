@@ -4,7 +4,7 @@ import XMonad
 import XMonad.Util.Cursor
 
 myStartup :: XConfig l -> XConfig l
-myStartup conf = conf{startupHook = startupHook conf <> myStartupHook}
+myStartup conf = conf {startupHook = startupHook conf <> myStartupHook}
 
 myStartupHook :: X ()
 myStartupHook = do
