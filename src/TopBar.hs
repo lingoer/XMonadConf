@@ -2,8 +2,14 @@
 
 module TopBar (myTopBar) where
 
+-- Standard library imports
 import Control.Concurrent
 import Control.Monad (void)
+-- XMonad imports
+
+-- External library imports
+
+-- Project-specific imports
 import Themes
 import XMonad
 import XMonad.Config.Desktop

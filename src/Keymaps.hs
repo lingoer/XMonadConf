@@ -9,7 +9,7 @@ myKeys =
     additionalKeysP
     [ ("M-p", spawn "rofi -show drun -m -1"),
       ("M-q", kill),
-      ("M-<Return>", spawn "kitty"),
+      ("M-<Return>", spawn "kitty -1"),
       ("M-u", spawn "xcolor | xsel -i -b"),
       ("<XF86AudioRaiseVolume>", spawn "pamixer -i 5 && pamixer --get-volume   | xargs -I {} dunstify -h 'int:value:{}' -i audio-volume-medium-symbolic Volume"),
       ("<XF86AudioLowerVolume>", spawn "pamixer -d 5 && pamixer --get-volume   | xargs -I {} dunstify -h 'int:value:{}' -i audio-volume-medium-symbolic Volume"),
