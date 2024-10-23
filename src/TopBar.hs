@@ -1,6 +1,6 @@
 {-# LANGUAGE LambdaCase #-}
 
-module TopBar (myTopBar) where
+module TopBar (myTopBar, myTopBar1) where
 
 -- Standard library imports
 import Control.Concurrent
@@ -45,6 +45,22 @@ myTopBar conf =
   conf
     { logHook = (topBarLogString >>= xmonadPropLog) <> logHook desktopConfig,
       startupHook = startupHook conf <> io startXmobar
+    }
+
+logToMVar :: MVar String -> String -> X ()
+logToMVar mvar str = io $ putMVar mvar str
+
+myLogHook :: MVar String -> X ()
+myLogHook mvar =
+  dynamicLogWithPP $
+    def
+      { ppOutput = putMVar mvar
+      }
+
+myTopBar1 :: MVar String -> XConfig l -> XConfig l
+myTopBar1 mvar conf =
+  conf
+    { logHook = myLogHook mvar
     }
 
 startXmobar :: IO ()

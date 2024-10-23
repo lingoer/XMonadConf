@@ -1,5 +1,6 @@
 module Main (main) where
 
+import Bar (startTopBar)
 import Keymaps
 import Startup
 import Themes as T
@@ -10,8 +11,9 @@ import XMonad.Hooks.ManageDocks
 import XMonad.Layout.NoBorders
 
 main :: IO ()
-main =
-  xmonad . myKeys . myStartup . myTopBar $
+main = do
+  mvar <- startTopBar
+  xmonad . myKeys . myStartup . myTopBar1 mvar $
     desktopConfig
       { modMask = mod4Mask,
         focusedBorderColor = T.primaryColor,

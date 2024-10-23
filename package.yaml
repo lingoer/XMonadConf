@@ -28,6 +28,7 @@ dependencies:
   - X11-xft
   - text
   - aeson
+  - cairo
 
 ghc-options:
 - -Wall
@@ -47,10 +48,10 @@ executables:
   xmonad:
     main:                Main.hs
     source-dirs:         app
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N2
+    # ghc-options:
+    # - -threaded
+    # - -rtsopts
+    # - -with-rtsopts=-N1
     dependencies:
     - MyDesktop
 
