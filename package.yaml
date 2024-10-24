@@ -26,8 +26,8 @@ dependencies:
   - xmobar >= 0.47
   - X11
   - X11-xft
-  - text
   - aeson
+  - bytestring
   - cairo
 
 ghc-options:
@@ -50,8 +50,8 @@ executables:
     source-dirs:         app
     ghc-options:
     - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N1
+    # - -rtsopts
+    # - -with-rtsopts=-N1
     dependencies:
     - MyDesktop
 

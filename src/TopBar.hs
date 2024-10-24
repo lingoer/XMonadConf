@@ -47,9 +47,6 @@ myTopBar conf =
       startupHook = startupHook conf <> io startXmobar
     }
 
-logToMVar :: MVar String -> String -> X ()
-logToMVar mvar str = io $ putMVar mvar str
-
 myLogHook :: MVar String -> X ()
 myLogHook mvar =
   dynamicLogWithPP $

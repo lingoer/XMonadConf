@@ -39,9 +39,9 @@ library
     , X11-xft
     , aeson
     , base >=4.7 && <5
+    , bytestring
     , cairo
     , containers
-    , text
     , xmobar >=0.47
     , xmonad
     , xmonad-contrib
@@ -53,16 +53,16 @@ executable xmonad
       Paths_MyDesktop
   hs-source-dirs:
       app
-  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded
   build-depends:
       MyDesktop
     , X11
     , X11-xft
     , aeson
     , base >=4.7 && <5
+    , bytestring
     , cairo
     , containers
-    , text
     , xmobar >=0.47
     , xmonad
     , xmonad-contrib
@@ -82,9 +82,9 @@ test-suite md-test
     , X11-xft
     , aeson
     , base >=4.7 && <5
+    , bytestring
     , cairo
     , containers
-    , text
     , xmobar >=0.47
     , xmonad
     , xmonad-contrib
